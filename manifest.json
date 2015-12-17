@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "UTC Gmail",
+    "description": "Shows all timestamps in IST and UTC in Gmail Inbox",
+    "version": "0.0.1",
+
+    "icons": {},
+    "background": {
+        "scripts": ["js/jquery.js"]
+    },
+    "permissions": ["*://*/*"],
+    "content_scripts": [
+        {
+            "matches": ["*://mail.google.com/*"],
+            "js": ["js/jquery.js", "js/strftime.js", "js/content.js"],
+            "run_at": "document_end"
+        }
+    ]
+
+}
+
